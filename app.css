@@ -1,0 +1,233 @@
+﻿/*
+    AUTHOR: GRADI KAYAMBA
+*/
+@charset "UTF-8";
+*{box-sizing:border-box;}
+header{
+    text-align:center;
+    border-bottom:5px solid #f2f2f2;
+    padding:15px 0;
+}
+header h1{font-size:3vw;}
+main {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #f7f7f7;
+    padding: 50px 0;
+}
+main > section{
+    width:24%;
+    margin:5px;
+    box-shadow: 0px 0px 9px -2px black;
+    border-radius:15px;
+    height:260px;
+    position:relative;
+    overflow:hidden;   
+}
+main section:nth-child(even){background-color:black;}
+main section:nth-child(odd){background-color:white;}
+footer{
+    text-align:center;
+    border-top:5px solid #f2f2f2;
+    padding:15px 0;
+}
+footer p{font-size:1vw;}
+@media screen and (max-width:800px){
+    main section{
+        width:48%;
+    }
+}
+@media screen and (max-width:450px){
+    body{margin:0;}
+    main section{
+        width:100%;
+    }
+}
+/*
+    ANIMATION starts bellow
+*/
+.sunCont, .planetCont {
+    position: absolute;
+    top: 37%;
+    left: 42%;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+}
+.sunCont {
+    width: 72px;
+    height: 43px;
+    animation-name: sunRot;
+    animation-duration: 5s;
+    transform: rotate(0deg);
+}
+.sunCont.cont5, .cont6, .cont7{animation-name:sunRotRev;transform: rotate(360deg);}
+.sunCont.cont2{animation-duration: 7s; animation-direction:alternate;}
+.sunCont.cont3{animation-duration: 10s;}
+.sunCont.cont4{animation-duration: 500ms;}
+.sunCont.cont5{animation-duration: 1s;}
+.sunCont.cont6{animation-duration: 10s;}
+.sunCont.cont7{animation-duration: 3000ms;}
+#sun1, #sun2, #sun3, #sun4, #sun5, #sun6, #sun8 {
+    width: 60px;
+    height: 60px;
+    background-color: #ffff5d;
+    border-radius: 50%;
+    position: inherit;
+    animation-name: sunShadow;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    border: 1px solid orange;
+    box-shadow: 0px 0px 12px 6px orange;
+    animation-direction: alternate;
+}
+#sun3 {
+    background-color: #ff915d;
+    border: 1px solid #ff4700;
+    box-shadow: 0px 0px 12px 6px #ff4700;
+}
+#sun4 {
+    background-image: linear-gradient(303deg, #00f3ff9e, #ffe00078);
+    border: 1px solid #85ff00;
+}
+#sun7 {
+    background-color: #000000c2;
+    box-shadow: 0 0 13px 7px black;
+    border: 3px solid #3a3a3a;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: inherit;
+    animation-name: sunShadowBlack;
+    animation-duration: 1500ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes sunRot{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}
+@keyframes sunShadow{
+    0%{box-shadow: 0px 0px 16px 6px orange;}
+    100%{box-shadow: 0px 0px 3px 2px orange;}
+}
+@keyframes sunShadowBlack{
+    0%{box-shadow: 0 0 25px 7px black;}
+    100%{box-shadow: 0 0 5px 0px black;}
+}
+@keyframes sunRotRev{
+    0%{transform:rotate(360deg);}
+    100%{transform:rotate(0deg);}
+}
+.planetCont {
+    width: 185px;
+    height: 56px;
+    left: 24%;
+    animation-name: planetRot;
+    animation-duration: 5s;
+    transform: rotate(360deg);
+}
+.planetCont.pCont2 {animation-direction: alternate;animation-duration: 7s;}
+.planetCont.pCont3 {animation-duration: 10s;}
+.planetCont.pCont4 {animation-duration: 500ms;}
+.planetCont.pCont6 {animation-direction: reverse;}
+.planetCont.pCont7-1 {
+    width: 148px;
+    height: 42px;
+    left: 98px;
+    animation-duration: 1500ms;
+    animation-direction: reverse;
+}
+.planetCont.pCont7-2 {
+    width: 214px;
+    height: 18px;
+    left: 55px;
+    animation-duration: 2800ms;
+}
+#planet1-1, #planet6-1 {
+    width: 40px;
+    height: 40px;
+    background-color: aqua;
+    position: inherit;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px 1px cyan;
+    border: 1px solid #3bcdd4;
+}
+#planet2-1, #planet2-2 {
+    width: 40px;
+    height: 40px;
+    background-color: #00ffff8a;
+    background-image: linear-gradient(45deg, #ffb100, transparent);
+    position: inherit;
+    border-radius: 50%;
+    box-shadow: 0px 0px 59px 1px #e4ff00;
+    border: 1px solid #3bcdd4;
+}
+#planet2-1{right:0;}
+#planet2-2{left:0;}
+#planet4-1 {
+    width: 50px;
+    height: 39px;
+    background-color: #ff915d;
+    position: inherit;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px 1px #ff915d;
+    border: 1px solid white;
+}
+#planet3-1 {
+    width: 50px;
+    height: 50px;
+    background-color: #ff915d;
+    position: inherit;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px 1px #ff915d;
+    border: 1px solid white;
+}
+#planet7-1 {
+    width: 30px;
+    height: 30px;
+    background-color: #520f0f;
+    position: inherit;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px 1px #5a0707;
+    border: 1px solid #ffffff;
+}
+#planet7-2 {
+    width: 40px;
+    height: 40px;
+    background-color: #0d6565;
+    position: inherit;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px 1px #021515;
+    border: 1px solid #ffffff;
+}
+@keyframes planetRot{
+    0%{transform:rotate(360deg);}
+    100%{transform:rotate(0deg);}
+}
+.moonCont {
+    width: 43px;
+    height: 46px;
+    left: 3%;
+    animation-name: moonRot;
+    animation-duration: 3s;
+    transform: rotate(360deg);
+    position: inherit;
+    top: 3%;
+    animation-direction: reverse;
+    animation-iteration-count: infinite;
+}
+@keyframes moonRot{
+    0%{transform:rotate(360deg);}
+    100%{transform:rotate(0deg);}
+}
+#moon3-1 {
+    width: 20px;
+    height: 20px;
+    background-color: #525252;
+    position: absolute;
+    border-radius: 50%;
+    left: -21px;
+    border: 1px solid white;
+    color: black;
+    box-shadow: 0px 0px 13px 1px #5f5f5f;
+}
